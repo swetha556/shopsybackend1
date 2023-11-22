@@ -1,0 +1,33 @@
+
+spring:
+  application:
+    name: cloudgateway
+  cloud:
+    gateway:
+      routes:
+        - id: loginpage
+          uri: lb://loginpage
+          predicates:
+            - Path=/users/**
+        - id: buyerpage
+          uri: lb://buyerpage
+          predicates:
+            - Path=/buy/**
+        - id: sellerpage
+          uri: lb://sellerpage
+          predicates:
+            - Path=/sell/**
+        - id: ShoppingCartpage
+          uri: lb://ShoppingCartpage
+          predicates:
+            - Path=/cart/**
+        - id: paymentpage
+          uri: lb://paymentpage
+          predicates:
+            - Path=/pay/**
+        - id: customerrating
+          uri: lb://customerrating
+          predicates:
+            - Path=/ratings/**
+            
+            
